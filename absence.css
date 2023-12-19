@@ -1,0 +1,50 @@
+.entete {
+    display: flex;
+    justify-content: space-between;
+}
+.titre {
+    color: rgb(15, 179, 15);
+    margin-bottom: 0;
+}
+.hr {
+    color: rgb(15, 179, 15);
+    margin: 0;
+    margin-bottom: 10px;
+}
+.input {
+    width: 95px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.formationSuivie {
+    width: 270px;
+}
+.hr2 {
+    margin: 10px 30px;
+}
+.titreH2 {
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    font-size: 1rem;
+}
+.inputRadio {
+    margin-left: 70px;
+}
+.heureABS {
+    margin-top: 5px;
+    text-align: center;
+}
+.journeeABS {
+    margin-top: 5px;
+    text-align: center;
+}
+p {
+    margin: 0;
+}
+.legend {
+    color: rgb(8, 128, 8);
+}
+.fieldsetSignature {
+    height: 130px;
+}

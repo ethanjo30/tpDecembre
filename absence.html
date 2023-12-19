@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="absence.css">
+    <title>Autorisation d'absence</title>
+    <script src="absence.js" defer></script>
+</head>
+<body>
+    <header>
+        <section class="entete">
+            <h1 class="titre">Autorisation d'absence</h1>
+            <img class="logo" src="image/Couleur-logo-AFPA-500x281-537154123.jpg" alt="Logo de l'afpa" width="100px">
+        </section>
+        <hr class="hr">
+        <section class="form">
+            <label for="nom">Votre nom</label>
+            <input class="input" type="text" id="nom" name="nom" placeholder="Votre nom">
+            <label for="nom">Votre Prenom</label>
+            <input class="input" type="text" id="prenom" name="prenom" placeholder="Votre prenom">
+            <label for="formation suivie">formation suivie</label>
+            <select class="formationSuivie" name="formation">
+                <option value="Concepteur(trice) développeur(se) informatique">Concepteur(trice) développeur(se) informatique</option>
+                <option value="Développeur(euse) logiciel">Développeur(euse) logiciel</option>
+                <option value="Technicien(ne) Helpdesk">Technicien(ne) Helpdesk</option>
+                <option value="Technicien(ne) supérieur(e) de support en informatiquer">Technicien(ne) supérieur(e) de support en informatique</option>
+                <option value="Administrateur(trice) réseaux">Administrateur(trice) réseaux</option>
+                <option value="Technicien(ne) supérieur(e) d’exploitation en informatique">Technicien(ne) supérieur(e) d’exploitation en informatique</option>
+            </select>
+            <fieldset class="option">
+                <legend class="legend"><h2 class="titreH2"><strong>Demande d'autorisation de s'absenter du centre</strong></h2></legend>
+                <input class="inputRadio" type="radio" id="heure" value="1">
+                <label for="heure"> A l'heure </label>
+                <input class="inputRadio" type="radio" id="journee" value="2">
+                <label for="journee"> A la jnournée </label>
+            </section>
+            <div class="choix"></div>
+            <input class="valider" type="button" value="valider" /> 
+        </section>
+    </header>
+    <main>
+    </main>
+    <navbar>
+        <fieldset>
+            <legend class="legend"><h2 class="titreH2">Cachet et signature</strong></h2></legend>
+            <p>Signature de l'entreprise pour justifier de l'absence de la formation de </p>
+            <fieldset class="fieldsetSignature">
+                <legend><strong>cachet de l'entreprise</strong></legend>
+            </fieldset>
+            <fieldset class="fieldsetSignature">
+                <legend><strong>date et signature du stagiaire</strong></legend>
+            </fieldset>
+            <fieldset class="fieldsetSignature">
+                <legend><strong>date et signature du formateur</strong></legend>
+            </fieldset>
+            <fieldset class="fieldsetSignature">
+                <legend><strong>Avis du MF pour decision du Directeur</strong></legend>
+            </fieldset>
+            <fieldset class="fieldsetSignature">
+                <legend><strong>Decision du Directeur</strong></legend>
+            </fieldset>
+        </fieldset>
+    </navbar>
+</body>
+</html>
