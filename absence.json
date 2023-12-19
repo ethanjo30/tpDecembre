@@ -1,0 +1,55 @@
+{ "Motif" : [    {
+        "categorie" : "Code 01 : retard absence non rémunéré",
+        "nom" :[ "Retard" ]
+    },
+    {
+        "categorie" : "Code 04 : Grève Afpa",
+        "nom" : ["Gréve Afpa"]
+    },
+    {
+        "categorie" : "Code 05 : Maladie",
+        "nom" : ["Maladie"]
+    },
+    {
+        "categorie" : "Code 06 : Absence Légale",
+        "nom" : [ "Naissance ou adoption (3jours)",
+        "Mariage (4jours)",
+        "Mariage d'un enfant (1jours)",
+        "Décès du conjoint ou du partenaire lié par un pacte civil de solidarité ou d'un enfant (2jours)",
+        "décès du mère, de la mère, du berau-père, de la belle-mère, d'un frère ou d'une soeur (1jours)",
+        "Visite médicale obligatoire de grossesse",
+        "Stagiaire élu menbre du CA d'une caisse de sécurité sociale"]
+    },
+    {
+        "categorie" : "code 20 - 21 - 30 - 31 - 40 - 41",
+        
+        "nom" :[ "Accident du travail sans arrêt",
+       "Accident du travail avec arrêt",
+       "Accident du trajet sans arrêt",
+       "Accident du trajet avec arrêt",
+       "Accident du travail  hors afpa sans arrêt",
+       "Accident du travail hors afpa avec arrêt"]
+    },
+    {
+        "categorie" : "code 98 : Absence autorisé non rémunérée",
+        "nom" : [
+
+         "Recherche PE",
+         "recherche d'un emploi",
+         "Visite d'un salon",
+         "Enquête en entreprise",
+         "Visite d'un autre centre",
+         "RDV psychologue du travail",
+         "Rendez-vous POLE EMPLOI",
+         "Absence pour fête religieuse hors jours fériés légaux",
+         "Grève des transports",
+         "Intempéries",
+         "Rdv avec le conseiller militaire",
+         "Recherche de logement, Rdv organisme divers",
+         "Recherche de logement, Rdv organisme divers"]
+    },
+    {
+        "categorie" : "code 99 : Absence non autorisé non rémunérée"
+    }
+]
+}

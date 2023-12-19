@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="absence.css">
+    <title>Autorisation d'absence</title>
+    <script src="absence.js"></script>
+</head>
+<body>
+    <header>
+        <section class="entete">
+            <h1 class="titre">Autorisation d'absence</h1>
+            <img class="logo" src="image/Couleur-logo-AFPA-500x281-537154123.jpg" alt="Logo de l'afpa" width="100px">
+        </section>
+        <hr class="hr">
+    </header>
+    <main>
+        <p>Demande reçu de</p>
+        <div> 
+            <p>nom <label for="" id="nom"></label></p>
+            <p>prenom <label for="" id="Prenom"></label></p>
+        </div>
+        <div> 
+            <p>Stagiaire de <label for="" id="formation"></label></p>
+        </div>
+        <div> 
+            <p>Autorisation d'absence pour le periode du <label for="" id="periodeDebut"></label></p>
+            <p>Au<label for="" id="periodeFin"></label> </p>
+        </div>
+        <div> 
+            <p>Au motif de <label for="" id="motif"></label></p>
+        </div>
+    </main>
+    <navbar>
+        <fieldset>
+            <legend class="legend"><h2 class="titreH2">Cachet et signature</strong></h2></legend>
+            <p>Signature de l'entreprise pour justifier de l'absence de la formation de </p>
+            <fieldset class="fieldsetSignature">
+                <legend><strong>cachet de l'entreprise</strong></legend>
+            </fieldset>
+            <fieldset class="fieldsetSignature">
+                <legend><strong>date et signature du stagiaire</strong></legend>
+            </fieldset>
+            <fieldset class="fieldsetSignature">
+                <legend><strong>date et signature du formateur</strong></legend>
+            </fieldset>
+            <fieldset class="fieldsetSignature">
+                <legend><strong>Avis du MF pour decision du Directeur</strong></legend>
+            </fieldset>
+            <fieldset class="fieldsetSignature">
+                <legend><strong>Decision du Directeur</strong></legend>
+            </fieldset>
+        </fieldset>
+    </navbar>
+    <script>
+        document.getElementById("nom").innerText +=new URLSearchParams(window.location.search).get("texte")
+        document.getElementById("prenom").innerText +=new URLSearchParams(window.location.search).get("texte")
+        document.getElementById("formation").innerText +=new URLSearchParams(window.location.search).get("combobox")
+        document.getElementById("periodeDebut").innerText +=new URLSearchParams(window.location.search).get("date")
+        document.getElementById("periodeFin").innerText +=new URLSearchParams(window.location.search).get("date")
+        document.getElementById("motif").innerText +=new URLSearchParams(window.location.search).get("checkbox")
+    </script>
+</body>
+</html>

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="absence.css">
     <title>Autorisation d'absence</title>
-    <script src="absence.js" defer></script>
+    <script src="absence.js"></script>
 </head>
 <body>
     <header>
@@ -36,31 +36,14 @@
                 <label for="journee"> A la jnournée </label>
             </section>
             <div class="choix"></div>
-            <input class="valider" type="button" value="valider" /> 
         </section>
     </header>
     <main>
-    </main>
-    <navbar>
         <fieldset>
-            <legend class="legend"><h2 class="titreH2">Cachet et signature</strong></h2></legend>
-            <p>Signature de l'entreprise pour justifier de l'absence de la formation de </p>
-            <fieldset class="fieldsetSignature">
-                <legend><strong>cachet de l'entreprise</strong></legend>
-            </fieldset>
-            <fieldset class="fieldsetSignature">
-                <legend><strong>date et signature du stagiaire</strong></legend>
-            </fieldset>
-            <fieldset class="fieldsetSignature">
-                <legend><strong>date et signature du formateur</strong></legend>
-            </fieldset>
-            <fieldset class="fieldsetSignature">
-                <legend><strong>Avis du MF pour decision du Directeur</strong></legend>
-            </fieldset>
-            <fieldset class="fieldsetSignature">
-                <legend><strong>Decision du Directeur</strong></legend>
-            </fieldset>
+            <legend class="legend"><h2 class="titreH2">Pour motif</strong></h2></legend>
+            <div class="modifCheckbox"></div>
         </fieldset>
-    </navbar>
+    </main>
+    <input class="valider" type="button" value="envoyer" /> 
 </body>
 </html>
