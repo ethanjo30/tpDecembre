@@ -1,5 +1,4 @@
 let btnRadio = document.querySelectorAll(".option input")
-    console.log(btnRadio)
 
 for(let i =0; i < btnRadio.length; i++) {
     let btnActuel = btnRadio[i]
@@ -49,8 +48,6 @@ validejour.addEventListener("click", (event) => {
     const differenceInDays = difference / (1000 * 3600 * 24);
 
     document.getElementById("resultatJours").textContent = "soit" +"  "+ differenceInDays +"  "+ "jours complet"
-    //console.log(differenceInDays+ " jours (du " + dateDebut.toDateString() + 
-    //" au " + dateFin.toDateString() + ")");
 
     } else {
         console.log("La date de fin doit être superrieur a la date de debut")
@@ -58,14 +55,12 @@ validejour.addEventListener("click", (event) => {
     
 })
 
-fetch("absence.json").then((response) => response.json())
+/*fetch("absence.json").then((response) => response.json())
 .then((json) => {for(let j =0; j < json.Motif.length; j++) {
     let afficheJson = json.Motif[j].categorie;
 
 let modifCheckbox = document.querySelector(".modifCheckbox")
 modifCheckbox.innerHTML += "<hr class = 'hr2'>" + afficheJson + "<br>"
-
-console.log(afficheJson)
 
 for(let k =0; k < json.Motif[j].nom.length; k++) {
     let affichjeson = json.Motif[j].nom[k]
@@ -75,30 +70,42 @@ for(let k =0; k < json.Motif[j].nom.length; k++) {
     modifCheckbox.innerHTML += checkbox.outerHTML + affichjeson + "<br>";
 }
     
-}});
+}});*/
 
-/*let envoie = document.getElementById("btnEnvoyer")
-envoie.addEventListener("submit", (event) => {
+body = document.getElementById("body")
+console.log(body)
 
-    let baliseNom = document.getElementById("nom")
-    let  nom = baliseNom.value
+body.addEventListener("submit", (event) => {
+    event.preventDefault();
 
-    let URL = "http://127.0.0.1:5500/signature.html?nom="+nom
+    let validejour = document.getElementById("valider")
 
-        window.location.replace(URL);
+validejour.addEventListener("click", (event) => {
 
-        console.log(nom)
-})*/
+    let dateDebut = new Date(document.getElementById("dateDebuJour").value)
+    let dateFin = new Date(document.getElementById("dateFinJour").value)
 
-document.getElementById("Form").addEventListener("submit", (event) => {
-    event.preventDefault(); // Empêche le formulaire de se soumettre normalement
+    if(dateDebut < dateFin) {
+        const difference = dateFin - dateDebut;
+    const differenceInDays = difference / (1000 * 3600 * 24);
+
+    document.getElementById("resultatJours").textContent = "soit" +"  "+ differenceInDays +"  "+ "jours complet"
+
+    } else {
+        console.log("La date de fin doit être superrieur a la date de debut")
+    }
+    
+})
 
     let baliseNom = document.getElementById("nom");
-    let nom = baliseNom.value;
+    let nom = baliseNom.value
+    let balisePrenom = document.getElementById("prenom");
+    let prenom = balisePrenom
 
-    let URL = "http://127.0.0.1:5500/TPDECEMBRE/signature.html?nom=" + nom;
+    let URL = "http://127.0.0.1:5500/signature.html?nom="+ nom +"&prenom="+ prenom;
+   // encodeURIComponent(baliseNom.value) + ;
     
-    window.location.href = URL; // Redirige vers la nouvelle URL avec le paramètre
+    window.location.href = URL;
 
-    console.log(nom);
+    console.log(baliseNom.value);
 });

@@ -6,14 +6,14 @@
     <link rel="stylesheet" href="absence.css">
     <title>Autorisation d'absence</title>
 </head>
-<body>
+<body id="body" >
     <header>
         <section class="entete">
             <h1 class="titre">Autorisation d'absence</h1>
             <img class="logo" src="image/Couleur-logo-AFPA-500x281-537154123.jpg" alt="Logo de l'afpa" width="100px">
         </section>
         <hr class="hr">
-        <form class="form">
+        <form id="form" action="">
             <label for="nom">Votre nom</label>
             <input class="input" type="text" id="nom" name="nom" placeholder="Votre nom">
             <label for="prenom">Votre Prenom</label>
@@ -36,7 +36,8 @@
                 <div class="choix"></div>
                 <div class="resultatJour"></div>
             </fieldset>
-            <input class="valider" type="button" id="valider" value="Valider" /> 
+            <input class="valider" type="button" id="valider" value="Valider" />
+            <button id="btnEnvoyer" type="submit">Envoyer</button>
         </form>
     </header>
     <main>
@@ -45,7 +46,6 @@
             <div class="modifCheckbox"></div>
         </fieldset>
     </main>
-    <button id="btnEnvoyer" type="submit">Envoyer !</button>
     <script src="absence.js" defer></script>
 </body>
 </html>

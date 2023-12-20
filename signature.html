@@ -20,8 +20,8 @@
             <legend class="legend"><h2 class="titreH2">recapitulatif des donnee saisie</strong></h2></legend>
             <p>Demande reçu de</p>
             <div> 
-                <p>nom :<label for="" id="nom"></label></p>
-                <p>prenom :<label for="" id="Prenom"></label></p>
+                <p>nom : <label for="" id="nom"></label></p>
+                <p>prenom : <label for="" id="prenom"></label></p>
             </div>
             <div> 
                 <p>Stagiaire de <label for="" id="formation"></label></p>
@@ -59,10 +59,10 @@
     <script>
         document.getElementById("nom").innerText +=new URLSearchParams(window.location.search).get("texte")
         document.getElementById("prenom").innerText +=new URLSearchParams(window.location.search).get("texte")
-        document.getElementById("formation").innerText +=new URLSearchParams(window.location.search).get("combobox")
+        //document.getElementById("formation").innerText +=new URLSearchParams(window.location.search).get("combobox")
         document.getElementById("periodeDebut").innerText +=new URLSearchParams(window.location.search).get("date")
-        document.getElementById("periodeFin").innerText +=new URLSearchParams(window.location.search).get("date")
-        document.getElementById("motif").innerText +=new URLSearchParams(window.location.search).get("checkbox")
+        //document.getElementById("periodeFin").innerText +=new URLSearchParams(window.location.search).get("date")
+        //document.getElementById("motif").innerText +=new URLSearchParams(window.location.search).get("checkbox")
     </script>
 </body>
 </html>
