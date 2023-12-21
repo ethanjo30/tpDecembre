@@ -48,7 +48,8 @@
          "Recherche de logement, Rdv organisme divers"]
     },
     {
-        "categorie" : "code 99 : Absence non autorisé non rémunérée"
+        "categorie" : "code 99 : Absence non autorisé non rémunérée",
+        "nom" : ["Autre"]
     }
 ]
 }

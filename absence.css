@@ -48,3 +48,20 @@ p {
 .fieldsetSignature {
     height: 130px;
 }
+
+
+@media screen and (min-width: 810px )and (max-width: 1200px) {
+    .option {
+        text-align: center;
+    }
+    .inputRadio{
+        margin-left: 15px;
+    }
+}
+
+@media screen and (min-width: 1900px )and (max-width: 1500px) {
+    .body{
+        margin: 100px;
+    }
+}
+    

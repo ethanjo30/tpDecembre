@@ -7,7 +7,7 @@
     <title>Autorisation d'absence</title>
 </head>
 <body id="body" >
-    <header>
+    <main>
         <section class="entete">
             <h1 class="titre">Autorisation d'absence</h1>
             <img class="logo" src="image/Couleur-logo-AFPA-500x281-537154123.jpg" alt="Logo de l'afpa" width="100px">
@@ -19,7 +19,7 @@
             <label for="prenom">Votre Prenom</label>
             <input class="input" type="text" id="prenom" name="prenom" placeholder="Votre prenom">
             <label for="formation suivie">formation suivie</label>
-            <select class="formationSuivie" name="formation">
+            <select id="formationSuivie" class="formationSuivie" name="formation">
                 <option value="Concepteur(trice) développeur(se) informatique">Concepteur(trice) développeur(se) informatique</option>
                 <option value="Développeur(euse) logiciel">Développeur(euse) logiciel</option>
                 <option value="Technicien(ne) Helpdesk">Technicien(ne) Helpdesk</option>
@@ -29,22 +29,32 @@
             </select>
             <fieldset class="option">
                 <legend class="legend"><h2 class="titreH2"><strong>Demande d'autorisation de s'absenter du centre</strong></h2></legend>
-                <input class="inputRadio" name="btn" type="radio" id="heure" value="1">
+                <input  id="heure" class="inputRadio" name="btn" type="radio" id="heure" value="1">
                 <label for="heure"> A l'heure </label>
-                <input class="inputRadio" name="btn" type="radio" id="journee" value="2">
-                <label for="journee"> A la jnournée </label>
-                <div class="choix"></div>
-                <div class="resultatJour"></div>
+                <input id="jour" class="inputRadio" name="btn" type="radio" id="journee" value="2">
+                <label for="journee"> A la journée </label>
+                <section id="journeeABS" class="journeeABS">
+                    <label>Du</label>
+                    <input type="date" id="dateDebuJour">
+                    <label>Au</label>
+                    <input type="date" id="dateFinJour"><br>
+                    <label id="resultatJours"></label>
+                </section>
+                <section id="heureABS" class="heureABS">
+                    <label>Le</label>
+                    <input type="date" id="dateHeure">
+                    <label>De</label>
+                    <input type="time" id="heureDebut" />
+                    <label>à</label>
+                    <input type="time" id="heureFin"  />
+                </section>
             </fieldset>
-            <input class="valider" type="button" id="valider" value="Valider" />
-            <button id="btnEnvoyer" type="submit">Envoyer</button>
-        </form>
-    </header>
-    <main>
-        <fieldset>
-            <legend class="legend"><h2 class="titreH2">Pour motif</strong></h2></legend>
-            <div class="modifCheckbox"></div>
-        </fieldset>
+            <fieldset class="motifFieldset">
+                <legend class="legend"><h2 class="titreH2">Pour motif</strong></h2></legend>
+                <div class="modifCheckbox"></div>
+            </fieldset>
+            <button class="btnEnvoyer" id="btnEnvoyer" type="submit">Envoyer</button>
+        </form> 
     </main>
     <script src="absence.js" defer></script>
 </body>

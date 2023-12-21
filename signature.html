@@ -24,14 +24,19 @@
                 <p>prenom : <label for="" id="prenom"></label></p>
             </div>
             <div> 
-                <p>Stagiaire de <label for="" id="formation"></label></p>
+                <p>Stagiaire de <label for="" id="formationSuivie"></label></p>
             </div>
             <div> 
-                <p>Autorisation d'absence pour le periode du <label for="" id="periodeDebut"></label></p>
-                <p>Au<label for="" id="periodeFin"></label> </p>
+                <p>Sera absent le : <label for="" id="jourAbsHeure"></label></p>
+                <p>de <label for="" id="heureDebut"></label></p>
+                <p>a <label for="" id="heureFin"></label></p>
             </div>
             <div> 
-                <p>Au motif de :<label for="" id="motif"></label></p>
+                <p>Sera absent le : <label for="" id="periodeDebut"></label></p>
+                <p>Au <label for="" id="periodeFin"></label></p>
+            </div>
+            <div> 
+                <p>Au motif de : <label for="" id="motif"></label></p>
             </div>
         </fieldset>
     </main>    
@@ -57,12 +62,14 @@
         </fieldset>
     </navbar>
     <script>
-        document.getElementById("nom").innerText +=new URLSearchParams(window.location.search).get("texte")
-        document.getElementById("prenom").innerText +=new URLSearchParams(window.location.search).get("texte")
-        //document.getElementById("formation").innerText +=new URLSearchParams(window.location.search).get("combobox")
-        document.getElementById("periodeDebut").innerText +=new URLSearchParams(window.location.search).get("date")
-        //document.getElementById("periodeFin").innerText +=new URLSearchParams(window.location.search).get("date")
-        //document.getElementById("motif").innerText +=new URLSearchParams(window.location.search).get("checkbox")
+        document.getElementById("nom").innerText +=new URLSearchParams(window.location.search).get("nom")
+        document.getElementById("prenom").innerText +=new URLSearchParams(window.location.search).get("prenom")
+        document.getElementById("formationSuivie").innerText +=new URLSearchParams(window.location.search).get("formationSuivie")
+        document.getElementById("heureDebut").innerText +=new URLSearchParams(window.location.search).get("heureDebut")
+        document.getElementById("heureFin").innerText +=new URLSearchParams(window.location.search).get("heureFin")
+        document.getElementById("periodeDebut").innerText +=new URLSearchParams(window.location.search).get("dateJourDebut")
+        document.getElementById("periodeFin").innerText +=new URLSearchParams(window.location.search).get("dateFinJour")
+        document.getElementById("motif").innerText +=new URLSearchParams(window.location.search).get("motifs")
     </script>
 </body>
 </html>

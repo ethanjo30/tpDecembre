@@ -1,111 +1,99 @@
-let btnRadio = document.querySelectorAll(".option input")
+let btnRadio = document.querySelectorAll(".option .inputRadio");
 
-for(let i =0; i < btnRadio.length; i++) {
-    let btnActuel = btnRadio[i]
+btnRadio.forEach(radio => {
+    radio.addEventListener('change', function() {
+        let jour = document.getElementById("journeeABS");
+        let heure = document.getElementById("heureABS");
 
-    btnActuel.addEventListener("click", (event) => {
-        Bouton = event.target
-
-        if(event.target.value === "1") {
-            let section = `
-                <section class="heureABS">
-                    <label>Le</label>
-                    <input type="date" id="dateHeure">
-                    <label>De</label>
-                    <input type="time" id="heureDebut" min="09:00" max="18:00" required />
-                    <label>à</label>
-                    <input type="time" id="heureFin" min="09:00" max="18:00" required />
-                </section>
-            `;
-
-            let choix = document.querySelector(".choix")
-            choix.innerHTML = section
-        }else{
-            let section = `
-                <section class="journeeABS">
-                    <label>Du</label>
-                    <input type="date" id="dateDebuJour">
-                    <label>Au</label>
-                    <input type="date" id="dateFinJour"><br>
-                    <abel id="resultatJours"></label>
-                </section>
-            `;
-            let choix = document.querySelector(".choix")
-            choix.innerHTML = section
+        if (this.value === "1") {
+            heure.style.display = "block";
+            jour.style.display = "none";
+        } else if (this.value === "2") {
+            heure.style.display = "none";
+            jour.style.display = "block";
         }
-    })
+    });
+});
+
+    fetch("absence.json")
+        .then((response) => response.json())
+        .then((json) => {
+            let modifCheckbox = document.querySelector(".modifCheckbox");
+            for (let i = 0; i < json.Motif.length; i++) {
+                let category = json.Motif[i].categorie;
+                modifCheckbox.innerHTML += "<hr class='hr2'>" + category + "<br>";
+
+                if (json.Motif[i].nom && json.Motif[i].nom.length > 0) {
+                    for (let j = 0; j < json.Motif[i].nom.length; j++) {
+                        let motif = json.Motif[i].nom[j];
+                        let checkbox = document.createElement("input");
+                        checkbox.type = "checkbox";
+                        checkbox.name = "motif";
+                        checkbox.value = motif;
+                        modifCheckbox.appendChild(checkbox);
+                        modifCheckbox.appendChild(document.createTextNode(motif));
+                        modifCheckbox.appendChild(document.createElement("br"));
+                    }
+                }
+            }
+        });
+
+function formaterDate(date) {
+    const options = { day: '2-digit', month: '2-digit', year: 'numeric' };
+    return new Date(date).toLocaleDateString('fr-FR', options);
 }
-
-let validejour = document.getElementById("valider")
-
-validejour.addEventListener("click", (event) => {
-
-    let dateDebut = new Date(document.getElementById("dateDebuJour").value)
-    let dateFin = new Date(document.getElementById("dateFinJour").value)
-
-    if(dateDebut < dateFin) {
-        const difference = dateFin - dateDebut;
-    const differenceInDays = difference / (1000 * 3600 * 24);
-
-    document.getElementById("resultatJours").textContent = "soit" +"  "+ differenceInDays +"  "+ "jours complet"
-
-    } else {
-        console.log("La date de fin doit être superrieur a la date de debut")
-    }
-    
-})
-
-/*fetch("absence.json").then((response) => response.json())
-.then((json) => {for(let j =0; j < json.Motif.length; j++) {
-    let afficheJson = json.Motif[j].categorie;
-
-let modifCheckbox = document.querySelector(".modifCheckbox")
-modifCheckbox.innerHTML += "<hr class = 'hr2'>" + afficheJson + "<br>"
-
-for(let k =0; k < json.Motif[j].nom.length; k++) {
-    let affichjeson = json.Motif[j].nom[k]
-    let checkbox = document.createElement("input");
-    checkbox.type = "checkbox";
-    checkbox.name = "motif"
-    modifCheckbox.innerHTML += checkbox.outerHTML + affichjeson + "<br>";
-}
-    
-}});*/
 
 body = document.getElementById("body")
-console.log(body)
+    body.addEventListener("submit", (event) => {
+        
+     event.preventDefault();
+    
+        let heureDebut = document.getElementById("heureDebut").value;
+        let heureFin = document.getElementById("heureFin").value;
+    
+        let dateJourDebut = new Date(document.getElementById("dateDebuJour").value);
+        let dateJourFin = new Date(document.getElementById("dateFinJour").value);
+        let select = document.getElementById("formationSuivie");
 
-body.addEventListener("submit", (event) => {
-    event.preventDefault();
-
-    let validejour = document.getElementById("valider")
-
-validejour.addEventListener("click", (event) => {
-
-    let dateDebut = new Date(document.getElementById("dateDebuJour").value)
-    let dateFin = new Date(document.getElementById("dateFinJour").value)
-
+        let dateDebut = new Date(document.getElementById("dateDebuJour").value)
+        let dateFin = new Date(document.getElementById("dateFinJour").value)
+    
+    //clacule de la diffenrence de jours
     if(dateDebut < dateFin) {
         const difference = dateFin - dateDebut;
-    const differenceInDays = difference / (1000 * 3600 * 24);
+        const differenceInDays = difference / (1000 * 3600 * 24);
 
     document.getElementById("resultatJours").textContent = "soit" +"  "+ differenceInDays +"  "+ "jours complet"
 
     } else {
-        console.log("La date de fin doit être superrieur a la date de debut")
+        window.alert("La date de fin doit être superrieur a la date de debut")
     }
-    
-})
 
-    let baliseNom = document.getElementById("nom");
-    let nom = baliseNom.value
-    let balisePrenom = document.getElementById("prenom");
-    let prenom = balisePrenom
+     let choice = select.selectedIndex;
+     let valeur_cherchee = select.options[choice].value;
+     let baliseNom = document.getElementById("nom");
+     let nom = baliseNom.value;
+     let balisePrenom = document.getElementById("prenom");
+     let prenom = balisePrenom.value;
+     let formationSuivie = valeur_cherchee;
+     let periodeDebut = formaterDate(dateJourDebut);
+     let periodeFin = formaterDate(dateJourFin);
+     let motifs = document.querySelectorAll('input[name="motif"]:checked');
+     let selectedMotifs = Array.from(motifs).map((checkbox) => checkbox.value);
 
-    let URL = "http://127.0.0.1:5500/signature.html?nom="+ nom +"&prenom="+ prenom;
-   // encodeURIComponent(baliseNom.value) + ;
-    
-    window.location.href = URL;
+     let URL = "http://127.0.0.1:5500/signature.html?nom=" + nom +
+         "&prenom=" + prenom + "&formationSuivie=" + formationSuivie +
+         "&heureDebut=" + heureDebut + "&heureFin=" + heureFin +
+         "&dateJourDebut=" + periodeDebut + "&dateFinJour=" + periodeFin +
+         "&motifs=" + selectedMotifs;
 
-    console.log(baliseNom.value);
-});
+     window.location.href = URL;
+     document.getElementById("form").reset();
+     
+     console.log(nom)
+     console.log(prenom)
+     console.log(formationSuivie)
+     console.log(periodeDebut)
+     console.log(periodeFin)
+     console.log(selectedMotifs)
+   });
